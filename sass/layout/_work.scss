@@ -1,4 +1,4 @@
-.title {
+.work__title {
     margin-top: 0;
     margin-bottom: 50px;
 
@@ -19,15 +19,15 @@
     display: flex;
 }
 
-.work-items .item+.item {
+.work-items .work-items__item + .work-items__item {
     margin-left: 30px;
 }
 
-.item {
+.work-items__item {
     position: relative;
 }
 
-.item-text {
+.work-items__text {
     margin: 0;
     padding-top: 27px;
     padding-bottom: 27px;
@@ -42,7 +42,7 @@
     text-transform: uppercase;
 }
 
-.item-text-bg {
+.work-items__bg {
     position: absolute;
     left: 0;
     bottom: 0;

@@ -1,4 +1,9 @@
-.quality-title {
+.quality {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.quality-items__title {
     margin-top: 0;
     margin-bottom: 10px;
 
@@ -11,7 +16,11 @@
     text-transform: uppercase;
 }
 
-.quality-text {
+.quality__title--hidden {
+    display: none;
+}
+
+.quality-items__text {
     margin-top: 0;
     margin-bottom: 0;
 
@@ -19,20 +28,15 @@
     line-height: 1.7;
 }
 
-.quality {
-    padding-top: 94px;
-    padding-bottom: 94px;
-}
-
 .quality-items {
     display: flex;
 }
 
-.quality-items>.item {
+.quality-items>.quality-items__item {
     width: 270px;
 }
 
-.quality-items .item+.item {
+.quality-items .quality-items__item+.quality-items__item {
     margin-left: 30px;
 }
 
