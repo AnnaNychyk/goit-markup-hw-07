@@ -17,10 +17,10 @@
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.01em;
-}
 
-.form-field+.form-field {
-    margin-top: 10px;
+    & + & {
+        margin-top: 10px;
+    }
 }
 
 .label {
@@ -54,6 +54,11 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
+
+    &:hover,
+    &:focus {
+        border-color: var(--accent-text-color);
+    }
 }
 
 .input-icon {
@@ -62,6 +67,11 @@
     top: 50%;
     transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .form-input:hover + &,
+    .form-input:focus + & {
+        fill: var(--accent-text-color);
+    }
 }
 
 .form-input-comment {
@@ -77,29 +87,24 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     box-sizing: border-box;
     border-radius: 4px;
+
+    &:hover,
+    &:focus {
+        border-color: var(--accent-text-color);
+    }
+
+    &::placeholder {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.01em;
+
+        color: rgba(117, 117, 117, 0.5);
+    }
 }
 
-.form-input:hover,
-.form-input-comment:hover,
-.form-input:focus,
-.form-input-comment:focus {
-    border-color: var(--accent-text-color);
-}
 
-.form-input:hover+.input-icon,
-.form-input:focus+.input-icon {
-    fill: var(--accent-text-color);
-}
-
-.form-input-comment::placeholder {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-
-    color: rgba(117, 117, 117, 0.5);
-}
 
 .form-field-condition {
     margin-top: 20px;
@@ -116,23 +121,23 @@
     font-size: 14px;
     line-height: 1.71;
     text-align: center;
-}
 
-.label-condition span {
-    margin-right: 9px;
+     span {
+        margin-right: 9px;
 
-    width: 16px;
-    height: 15px;
-    border: 2px solid var(--primary-text-color);
-    border-radius: 3px;
+        width: 16px;
+        height: 15px;
+        border: 2px solid var(--primary-text-color);
+        border-radius: 3px;
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-.input-condition:checked+.label-condition span {
-    background-color: var(--accent-text-color);
-    border: none;
+            .input-condition:checked + & {
+                background-color: var(--accent-text-color);
+                border: none;
+            }
+    }
 }
 
 .icon-wrapper {

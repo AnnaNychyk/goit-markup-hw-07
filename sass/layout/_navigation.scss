@@ -1,7 +1,23 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
 .site-nav .link {
     color: var(--primary-text-color);
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus{
+        color: var(--accent-text-color);
+    }
 }
 
 .site-nav .link.current {
@@ -9,26 +25,36 @@
     padding-bottom: 32px;
 
     color: var(--accent-text-color);
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 4px;
+        bottom: 0px;
+
+        display: block;
+
+        background-color: var(--accent-text-color);
+        border-radius: 2px;
+    }
 }
 
-.site-nav .link.current::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 4px;
-    bottom: 0px;
-
-    display: block;
-
-    background-color: var(--accent-text-color);
-    border-radius: 2px;
+.auth-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus,
-.auth-nav .link:hover,
-.auth-nav .link:focus {
-    color: var(--accent-text-color);
+.auth-nav .link {
+    color: inherit;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-text-color);
+    }
 }
 
 .nav {
@@ -40,32 +66,8 @@
     margin-left: 50px;
 }
 
-.site-nav {
-    display: flex;
-    align-items: center;
-}
-
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ---------------Auth-nav--------------- */
-.auth-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .tlink {
     margin-left: 50px;
-}
-
-.auth-nav .link {
-    color: inherit;
-
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav,
@@ -94,11 +96,11 @@
     fill: var(--secondary-text-color);
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.svg-p:hover .envelope,
-.svg-p:focus .envelope {
-    fill: var(--accent-text-color);
+    .svg-p:hover &,
+    .svg-p:focus & {
+        fill: var(--accent-text-color);
+    }
 }
 
 .smartphone {
@@ -107,9 +109,10 @@
     fill: var(--secondary-text-color);
 
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .svg-p:hover &,
+    .svg-p:focus & {
+        fill: var(--accent-text-color);
+    }
 }
 
-.svg-p:hover .smartphone,
-.svg-p:focus .smartphone {
-    fill: var(--accent-text-color);
-}
